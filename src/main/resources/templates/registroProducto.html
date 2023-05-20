@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+  <form th:action="@{/productos/add}" th:object="${Producto}" method="POST">
+      <div >
+          <label>Nombre</label>
+          <input type="text" name="nombre" th:field="*{nombre}"
+                 class="form-control"
+                 placeholder="Introduce el nombre"/>
+      </div>
+      <div >
+          <label>Apellido</label>
+          <input type="text" name="precio" th:field="*{precio}"
+                 class="form-control"
+                 placeholder="Introduce el apellido"/>
+      </div>
+      <div class="box-footer">
+          <button type="submit">Registrar</button>
+      </div>
+  </form>
+</body>
+</html>
