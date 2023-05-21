@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller //Todos estas clausulas que empizan con @ se llaman beam
 public class ControllerProducto {
@@ -31,7 +32,7 @@ public class ControllerProducto {
 
     @GetMapping("/")
     public String inicio(){
-        return "index";
+        return "Index";
     }
 
     @GetMapping("/greeting/{nombre}/{edad}")
@@ -60,8 +61,30 @@ public class ControllerProducto {
 
     //Añadir un producto PostMapping
     @PostMapping("/productos/add")
-    public Object saveStudent(@ModelAttribute("producto") Producto producto) {
+    public Object saveProducto(@ModelAttribute("producto") Producto producto) {
         productoServices.save(producto);
-        return new RedirectView("/");
+        return new RedirectView("/productos");
+    }
+    @GetMapping("/productos/edit/{id}")
+    public String editSProducto(@PathVariable int id, Model model){
+        Optional<Producto> aux = productoServices.findById(id);
+        Producto producto = aux.orElseThrow(() ->
+                new RuntimeException("El producto no existe")
+        );
+        model.addAttribute("Producto", producto);
+        return ("editarProducto");
+    }
+
+    @PostMapping("/productos/edit/{id}")
+    public Object saveProducto(@ModelAttribute("producto") Producto producto, @PathVariable int id, Model model) {
+        producto.setId(id);
+        productoServices.save(producto);
+        return new RedirectView("/productos");
+    }
+
+    @GetMapping("/productos/delete/{id}")
+    public RedirectView deleteProducto(@PathVariable int id){
+        productoServices.deleteProducto(id);
+        return new RedirectView("/productos");
     }
 }

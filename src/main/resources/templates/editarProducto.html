@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Winitronics</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a th:href="@{/productos}"><img src="../Imagenes/WinitronicsPNG.png"></a></li>
+            <li><a th:href="@{/productos}">Videojuegos</a></li>
+            <li><a th:href="@{/productos/add}">Agregar</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><img src="../Imagenes/CarritoCompra.png"></a></li>
+        </ul>
+    </nav>
+    <div class="cuerpo">
+        <h1>Editar producto</h1>
+        <form th:action="@{/productos/edit/{id} (id=${id})}" th:object="${Producto}" method="POST">
+            <div>
+                <label>Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}"
+                       class="form-control"
+                       placeholder="Introduce el nombre"
+                       th:value="${nombre}"/>
+            </div>
+            <div>
+                <label>Precio</label>
+                <input type="text" name="precio" th:field="*{precio}"
+                       class="form-control"
+                       placeholder="Introduce el apellido"
+                       th:value="${precio}"/>
+            </div>
+            <div>
+                <button type="submit">Editar</button>
+            </div>
+        </form>
+    </div>
+<footer>
+    <ul>
+        <a th:href="@{/productos.html}">Home</a>
+        <a th:href="@{/productos}">Videojuegos</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </ul>
+    <ul>
+        <a href="#">Devoluciones</a>
+        <a href="#">Contacta con nosotros</a>
+        <a href="#">Terminos y condiciones</a>
+        <a href="#">Trabaja con nosotros</a>
+    </ul>
+</footer>
+</body>
+</html>

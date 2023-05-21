@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Winitronics</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <form th:action="@{/productos/add}" th:object="${Producto}" method="POST">
-      <div >
-          <label>Nombre</label>
-          <input type="text" name="nombre" th:field="*{nombre}"
-                 class="form-control"
-                 placeholder="Introduce el nombre"/>
-      </div>
-      <div >
-          <label>Apellido</label>
-          <input type="text" name="precio" th:field="*{precio}"
-                 class="form-control"
-                 placeholder="Introduce el apellido"/>
-      </div>
-      <div class="box-footer">
-          <button type="submit">Registrar</button>
-      </div>
-  </form>
+    <nav>
+        <ul>
+            <li><a th:href="@{/productos}"><img src="../Imagenes/WinitronicsPNG.png"></a></li>
+            <li><a th:href="@{/productos}">Videojuegos</a></li>
+            <li><a th:href="@{/productos/add}">Agregar</a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><img src="../Imagenes/CarritoCompra.png"></a></li>
+        </ul>
+    </nav>
+    <div class="cuerpo">
+        <form th:action="@{/productos/add}" th:object="${Producto}" method="POST">
+            <div >
+                <label>Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}"
+                       class="form-control"
+                       placeholder="Introduce el nombre"/>
+            </div>
+            <div >
+                <label>Precio</label>
+                <input type="text" name="precio" th:field="*{precio}"
+                       class="form-control"
+                       placeholder="Introduce el apellido"/>
+            </div>
+            <div>
+                <button type="submit">Añadir</button>
+            </div>
+        </form>
+    </div>
+  <footer>
+      <ul>
+          <a th:href="@{/productos.html}">Home</a>
+          <a th:href="@{/productos}">Videojuegos</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+      </ul>
+      <ul>
+          <a href="#">Devoluciones</a>
+          <a href="#">Contacta con nosotros</a>
+          <a href="#">Terminos y condiciones</a>
+          <a href="#">Trabaja con nosotros</a>
+      </ul>
+  </footer>
 </body>
 </html>
