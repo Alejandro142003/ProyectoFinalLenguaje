@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar producto</title>
+</head>
+<body>
+<h1>Editar producto</h1>
+    <div>
+        <form th:action="@{/productos/edit/{id} (id=${id})}" th:object="${Producto}" method="POST">
+            <div>
+                <label>Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}"
+                       class="form-control"
+                       placeholder="Introduce el nombre"
+                       th:value="${nombre}"/>
+            </div>
+            <div>
+                <label>Precio</label>
+                <input type="text" name="precio" th:field="*{precio}"
+                       class="form-control"
+                       placeholder="Introduce el apellido"
+                       th:value="${precio}"/>
+            </div>
+            <div>
+                <button type="submit">Editar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

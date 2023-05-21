@@ -5,15 +5,42 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Productos</h1>
-<div>
-    <table>
-        <tr th:each="producto,iter: ${productos}">
-            <td th:text="${producto.id}"></td>
-            <td th:text="${producto.nombre}"></td>
-            <td th:text="${producto.precio}"></td>
-        </tr>
-    </table>
-</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Videojuegos</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Carrito</a></li>
+        </ul>
+    </nav>
+    <h1>Videojuegos</h1>
+    <div>
+        <table>
+            <tr th:each="producto,iter: ${productos}">
+                <td th:text="${producto.id}"></td> <!-- Enlace para editar el producto -->
+                <td th:text="${producto.nombre}"></td>
+                <td th:text="${producto.precio}"></td>
+                <td>
+                    <a th:href="@{/productos/edit/{id}(id=${producto.id})}" role="button">Editar</a>
+                    <a th:href="@{/productos/delete/{id}(id=${producto.id})}" role="button">Borrar</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <ul>
+            <a href="#">Home</a>
+            <a href="#">Videojuegos</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </ul>
+        <ul>
+            <a href="#">Devoluciones</a>
+            <a href="#">Contacta con nosotros</a>
+            <a href="#">Terminos y condiciones</a>
+            <a href="#">Trabaja con nosotros</a>
+        </ul>
+    </footer>
 </body>
 </html>
