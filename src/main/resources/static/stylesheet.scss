@@ -1,0 +1,149 @@
+$color1: #000000;
+$color2: #b79467;
+$color3: #997c56;
+$color4: #7b6445;
+$color5: #5e4c35;
+$fondo: #2b2b2b;
+$fondoBody: #404040;
+
+// Estilos para el encabezado
+
+nav {
+  background-color: $fondo;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-right: 20px;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        color: $color2;
+        text-decoration: none;
+
+        &:hover {
+          color: $color3;
+        }
+      }
+    }
+  }
+}
+
+// Estilos formulario
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  label {
+    color: $color2;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid $color2;
+    border-radius: 5px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: $color3;
+    color: $color2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color3;
+    }
+  }
+}
+
+//Estilo para el footer
+
+footer {
+  background-color: $fondo;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: inline-block;
+      color: $color2;
+      text-decoration: none;
+      margin-right: 10px;
+
+      &:hover {
+        color: $color3;
+      }
+    }
+  }
+}
+
+// Estilos generales
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cuerpo{
+  background-color: $fondoBody;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: $color2;
+  margin-top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  border-radius: 10px;
+
+  td {
+    border: 1px solid $color3;
+    padding: 5px;
+    color: $color2;
+  }
+
+  a {
+    color: $color3;
+    text-decoration: none;
+    margin-right: 10px;
+
+    &:hover {
+      color: $color4;
+    }
+  }
+}

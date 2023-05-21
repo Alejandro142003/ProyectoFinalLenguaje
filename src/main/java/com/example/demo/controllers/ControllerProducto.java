@@ -32,7 +32,7 @@ public class ControllerProducto {
 
     @GetMapping("/")
     public String inicio(){
-        return "index";
+        return "Index";
     }
 
     @GetMapping("/greeting/{nombre}/{edad}")

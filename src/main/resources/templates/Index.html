@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Alejandro</title>
+    <title>Winitronics</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 <nav>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Videojuegos</a></li>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/productos}">Videojuegos</a></li>
+        <li><a th:href="@{/produtos/add}">Agregar</a></li>
     </ul>
     <ul>
         <li><a href="#">Carrito</a></li>
@@ -30,8 +32,8 @@
 </div>
 <footer>
     <ul>
-        <a href="#">Home</a>
-        <a href="#">Videojuegos</a>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/productos}">Videojuegos</a>
         <a href="#">Instagram</a>
         <a href="#">Twitter</a>
     </ul>

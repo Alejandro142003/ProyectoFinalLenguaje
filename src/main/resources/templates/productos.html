@@ -1,46 +1,48 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Alejandro</title>
+    <title>Winitronics</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Videojuegos</a></li>
-        </ul>
-        <ul>
-            <li><a href="#">Carrito</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a th:href="@{/productos}"><img src="../Imagenes/WinitronicsPNG.png"></a></li>
+        <li><a th:href="@{/productos}">Videojuegos</a></li>
+        <li><a th:href="@{/productos/add}">Agregar</a></li>
+    </ul>
+    <ul>
+        <li><a href="#"><img src="../Imagenes/CarritoCompra.png"></a></li>
+    </ul>
+</nav>
+<div class="cuerpo">
     <h1>Videojuegos</h1>
-    <div>
-        <table>
-            <tr th:each="producto,iter: ${productos}">
-                <td th:text="${producto.id}"></td> <!-- Enlace para editar el producto -->
-                <td th:text="${producto.nombre}"></td>
-                <td th:text="${producto.precio}"></td>
-                <td>
-                    <a th:href="@{/productos/edit/{id}(id=${producto.id})}" role="button">Editar</a>
-                    <a th:href="@{/productos/delete/{id}(id=${producto.id})}" role="button">Borrar</a>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <footer>
-        <ul>
-            <a href="#">Home</a>
-            <a href="#">Videojuegos</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </ul>
-        <ul>
-            <a href="#">Devoluciones</a>
-            <a href="#">Contacta con nosotros</a>
-            <a href="#">Terminos y condiciones</a>
-            <a href="#">Trabaja con nosotros</a>
-        </ul>
-    </footer>
+    <table>
+        <tr th:each="producto,iter: ${productos}">
+            <td th:text="${producto.id}"></td> <!-- Enlace para editar el producto -->
+            <td th:text="${producto.nombre}"></td>
+            <td th:text="${producto.precio}"></td>
+            <td>
+                <a th:href="@{/productos/edit/{id}(id=${producto.id})}" role="button">Editar</a>
+                <a th:href="@{/productos/delete/{id}(id=${producto.id})}" role="button">Borrar</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<footer>
+    <ul>
+        <a th:href="@{/productos}">Home</a>
+        <a th:href="@{/productos}">Videojuegos</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </ul>
+    <ul>
+        <a href="#">Devoluciones</a>
+        <a href="#">Contacta con nosotros</a>
+        <a href="#">Terminos y condiciones</a>
+        <a href="#">Trabaja con nosotros</a>
+    </ul>
+</footer>
 </body>
 </html>
